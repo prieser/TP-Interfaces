@@ -1,0 +1,16 @@
+-----------------------
+-----------------------
+Estube viendo un poco como agregar un pedido http://localhost:9000/caso que retorna un json que tiene un caso 
++ un expediente que se inicializan en la clase juego del dominio
+
+no tengo muy en claro como hacer q angular tome estos datos y los muestre en el html
+deje un poco de codigo comentado en el js q pensaba utilizar de ejemplo, incluyendo el json q se obtiene
+-----------------------
+-----------------------
+Copio el enunciado del TP 2. Las llamadas que tenemos que hacer al servidor:
+
+Debe implementarse un servidor que responda JSON y tenga por lo menos los siguientes servicios publicados:
+    1) iniciarJuego que devuelve un caso + los posibles villanos para pedir la orden de arresto
+    2) pistaDelLugar que espera un lugar y un caso y devuelve la pista              [Pablo]
+    3) emitirOrdenPara que espera un villano y un caso y devuelve ok o nok
+    4) viajar que espera un destino y un caso y devuelve el nuevo estado del caso (lista de fallidos - viajes posibles - lugares del pais - lugares recorridos)
