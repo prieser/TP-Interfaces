@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html ng-app="carmenApp">
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <!--Importacion de css-->
+    <link rel="stylesheet" href="stylesheets/myCSS.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap-theme.min.css">
+
+    <!--Importacion de los .js-->
+    <script src="lib/jquery-2.1.1.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script src="javascripts/app.js"></script>
+
+    <title>Resolver Caso: </title>
+</head>
+
+<body id="body" data-ng-controller="mainController">
+
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>Carmen Sandiego</h1>
+    </div>
+
+    <!--Fila con tres columnas donde estan (en orden): El pais que esta visitando, los lugares disponibles, el resultado de visitar un lugar-->
+    <div id="filaPrincipal" class="row">
+
+        <!--Primera columna-->
+        <div class="col-sm-4 columnaPaisActual">
+            <h4>Detective, se encuentra en: {{paisActual}}</h4>
+            <img class="img-thumbnail" src="http://visitemosargentina.com/home/wp-content/uploads/2012/05/Obelisco.jpg" width="300" height="230">
+        </div>
+
+        <!--Segunda Columna-->
+        <div class="col-sm-4 columnaPaisActual">
+            <h4>Lugares de interes que puedes visitar:</h4>
+
+            <form>
+                <button ng-repeat="lugar in lugares" type="button" class="btn btn-primary btn-lg" data-ng-click="visitarLugar(lugar)">Visitar {{lugar.nombreLugar}}</button>
+            </form>
+        </div>
+    </div>
+
+    <!--Fila con tres columnas donde van las acciones que puede realizar el detective-->
+    <div id="botoneraDeAcciones" class="row">
+        <h3>Acciones disponibles:</h3>
+
+        <!--Columna para viajar a otro pais-->
+        <div class="col-sm-4 columnaAcciones">
+            <h4>Viajar a otro pais</h4>
+
+            <form>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Destinos posibles
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a ng-repeat="pais in paisesViajar" ng-click="setDestino(pais)">{{pais}}</a></li>
+                    </ul>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-lg" data-ng-click="viajar(destino)"> Viajar</button>
+            </form>
+        </div>
+
+        <!--Columna para emitir ordenes de arresto-->
+        <div class="col-sm-8 columnaAcciones">
+            <h4>Expediente de sospechosos</h4>
+
+            <form>
+                <ul>
+                    <li ng-repeat="villano in villanos">
+                        <label>{{villano.nombre}}
+                            <input type="radio" ng-model="posibleCulpable" value="{{villano.nombre}}"/>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+            <button type="button" class="btn btn-primary btn-lg" data-ng-click="arrestar()">Emitir orden de arresto</button>
+        </div>
+
+    </div>
+
+    <br> </br>
+
+    <!--Rectangulo inferior donde estan los paises recorridos-->
+    <div class="panel-footer filaInferior">
+        <h4>Paises recorridos al momento:</h4>
+
+        <div id="listaPaisesVisitados" ng-repeat="paisVisitado in paisesVisitados">
+            <span class="label label-success">{{paisVisitado}}</span>
+        </div>
+    </div>
+</div>
+
+
+<div id="verLibroModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h2>{{pista}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

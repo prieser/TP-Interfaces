@@ -1,0 +1,44 @@
+#body {
+    background-color: #336699;
+}
+
+.columnaPaisActual {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 10px;
+    height: 400px;
+    text-align: center;
+    background-color: #81A594;
+}
+
+.columnaAcciones {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 10px;
+    height: 200px;
+    text-align: center;
+    background-color: #E4C170;
+}
+
+.filaInferior {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 10px;
+    height: 100px;
+    text-align: left;
+    background-color: #DCDCDC;
+}
+
+#pista {
+    text-align: left;
+}
+
+.button {
+    display: inline-table;
+    padding: 10px;
+}
+
+#listaPaisesVisitados {
+    display: inline;
+    font-size: 20px;
+}
