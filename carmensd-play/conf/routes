@@ -1,0 +1,23 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+
+GET			/emitirOrdenPara/:villano	controllers.Application.verificarCulpable(villano:String)
+
+
+GET        /                                  controllers.Application.index()
+GET        /caso                              controllers.Application.caso()
+
+GET        /caso/lugares                      controllers.Application.lugaresDisponibles()
+GET        /caso/pista/:idLugar               controllers.Application.pista(idLugar:Int)
+GET        /caso/visitarLugar/:idLugar        controllers.Application.visitarLugar(idLugar:Int)
+
+GET        /caso/destinos                     controllers.Application.destinosDisponibles()
+GET        /caso/viajar/:destino              controllers.Application.viajar(destino:String)
+
+GET        /caso/verificarCulpable/:villano controllers.Application.verificarCulpable(villano:String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET        /assets/*file                      controllers.Assets.at(path="/public", file)
