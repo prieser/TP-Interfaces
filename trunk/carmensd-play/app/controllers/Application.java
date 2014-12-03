@@ -56,11 +56,9 @@ public class Application extends Controller {
         response().setContentType("application/json");
         
         Villano acusado = Expediente.getInstance().buscarVillanoEnLaColeccion(villano);
-        //Villano acusado = Expediente.getInstance().buscarVillanoEnLaColeccion("Valderrama");
-        /*
         boolean ok = CasoE.getInstance().responsableAcertado(acusado);
-        */		
-        JsonNode json1 = Json.toJson(acusado);
+        		
+        JsonNode json1 = Json.toJson(ok);
         return ok(json1);
         		
     	/*
