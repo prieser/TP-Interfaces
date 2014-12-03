@@ -57,6 +57,8 @@ public class Application extends Controller {
         
         Villano acusado = Expediente.getInstance().buscarVillanoEnLaColeccion(villano);
         boolean ok = CasoE.getInstance().responsableAcertado(acusado);
+        
+        //un boolean no puede transformarse a json!
         		
         JsonNode json1 = Json.toJson(ok);
         return ok(json1);
