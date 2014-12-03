@@ -12,8 +12,10 @@ GET        /caso                              controllers.Application.caso()
 
 GET        /caso/lugares                      controllers.Application.lugaresDisponibles()
 
+//retorna un lugar!
 GET        /caso/pista/:idLugar               controllers.Application.pista(idLugar:Int)
 
+//visitar lugar Ojo es un string
 GET        /caso/visitarLugar/:idLugar        controllers.Application.visitarLugar(idLugar:Int)
 
 GET        /caso/destinos                     controllers.Application.destinosDisponibles()
