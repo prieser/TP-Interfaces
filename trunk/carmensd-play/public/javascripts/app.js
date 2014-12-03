@@ -45,15 +45,20 @@ app.controller('mainController', function ($scope, $http) {
     }
     
     $scope.posibleCulpable = "";
-
+    $scope.setSospechoso = function (villano){
+    	$scope.posibleCulpable = villano;
+    }
     
     $scope.arrestar = function(){
-            if(posibleCulpable == ""){
+            if($scope.posibleCulpable == ""){
                 alert("elegir un villano para generar la orden de arresto");
             } else{
-                $http.get('/emitirOrdenPara/' + posibleCulpable)
-                .success(function (data) {
-                    if(data){
+                $http.get('/emitirOrdenPara/' + $scope.posibleCulpable)
+                
+                
+                .success(function (b) {
+                    
+                    if(b){
                         alert("has capturado al culpable");
                     }else{
                         alert("te has equivocado, vuelve a intentarlo");
