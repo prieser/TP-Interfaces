@@ -11,7 +11,9 @@ GET        /                                  controllers.Application.index()
 GET        /caso                              controllers.Application.caso()
 
 GET        /caso/lugares                      controllers.Application.lugaresDisponibles()
+
 GET        /caso/pista/:idLugar               controllers.Application.pista(idLugar:Int)
+
 GET        /caso/visitarLugar/:idLugar        controllers.Application.visitarLugar(idLugar:Int)
 
 GET        /caso/destinos                     controllers.Application.destinosDisponibles()
