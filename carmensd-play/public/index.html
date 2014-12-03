@@ -71,16 +71,17 @@
         <div class="col-sm-8 columnaAcciones">
             <h4>Expediente de sospechosos</h4>
 
-            <form>
-                <ul>
-                    <li ng-repeat="villano in villanos">
-                        <label>{{villano.nombre}}
-                            <input type="radio" ng-model="posibleCulpable" value="{{villano.nombre}}"/>
-                        </label>
-                    </li>
-                </ul>
-            </form>
-            <button type="button" class="btn btn-primary btn-lg" data-ng-click="arrestar()">Emitir orden de arresto</button>
+                <form>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Sospechosos
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a ng-repeat="villano in villanos" data-ng-click="setSospechoso(villano.nombre)">{{villano.nombre}}</a></li>
+                    </ul>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-lg" data-ng-click="arrestar()"> Emitir Orden</button>
+          		 </form>
         </div>
 
     </div>
