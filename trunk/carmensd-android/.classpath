@@ -7,7 +7,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.xtend.XTEND_CONTAINER"/>
 	<classpathentry kind="lib" path="libs/gson-2.3.jar"/>
-	<classpathentry kind="lib" path="libs/mockwebserver-2.0.0.jar"/>
 	<classpathentry kind="lib" path="libs/retrofit-1.7.0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
