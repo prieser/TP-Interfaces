@@ -8,24 +8,35 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" 
-     >
-    
+    tools:context=".MainActivity" >
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title" />
 
-    <Button
-        android:id="@+id/buscar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="buscar"
-        android:text="@string/buscar" />
-
     <TextView
         android:id="@+id/saludo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/viajarBoton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="buscar"
+        android:text="@string/viajarBoton" />
+
+    <Button
+        android:id="@+id/emitirOrdenArrestoBoton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emitirOrdenArresto" />
+
+    <Button
+        android:id="@+id/visitarLugarBoton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/visitarLugarBoton" />
+
 </LinearLayout>

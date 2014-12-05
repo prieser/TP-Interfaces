@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Hola mundo</string>
+    <string name="app_name">Carmen Sandiendo Aplicacion de Android</string>
     <string name="action_settings">Settings</string>
-    <string name="buscar">Saludar</string>
-    <string name="title">Hola mundo</string>
+    <string name="title">Bienvenido detective! ¿Que es lo que desea hacer?</string>
+    <string name="emitirOrdenArresto">Emitir Orden de Arresto</string>
+    <string name="viajarBoton">Viajar a otro Pais</string>
+    <string name="visitarLugarBoton">Visitar un Lugar</string>
 
 </resources>
