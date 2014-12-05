@@ -33,7 +33,6 @@ class MainActivity extends Activity implements OnClickListener {
 		val restAdapter = new RestAdapter.Builder().setEndpoint(API_URL).build
 		val ViajarService viajarService = restAdapter.create(typeof(ViajarService))
 
-		// Invocamos al servicio aca!
 		viajarService.getDestinos(new Callback<DestinosPosibles>() {
 
 				override failure(RetrofitError e) {
