@@ -5,4 +5,7 @@ import retrofit.http.GET
 
 interface ViajarService {
 
+  @GET("/destinos")
+  def void getDestinos(Callback<DestinosPosibles> callback)
+  
 }
