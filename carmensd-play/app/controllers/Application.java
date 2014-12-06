@@ -28,6 +28,10 @@ public class Application extends Controller {
         JsonNode json1 = Json.toJson(caso);
         return ok(json1);
     }
+    
+    public static Result paisActual() {
+    	return ok(Json.toJson(CasoE.getInstance().getEstoyPais()));
+    }
 
     //pistaDelLugar que espera un lugar y un caso y devuelve la pista
     public static Result pista(int idDelLugar) {
@@ -89,7 +93,7 @@ public class Application extends Controller {
         result.put("error", message);
         return result;
     }
-
+    
     protected static ObjectNode crearJsonOk() {
         ObjectNode result = Json.newObject();
         result.put("status", "OK");
