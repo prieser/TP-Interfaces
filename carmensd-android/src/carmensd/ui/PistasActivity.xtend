@@ -10,39 +10,35 @@ import retrofit.RestAdapter
 import retrofit.RetrofitError
 import retrofit.client.Response
 
-class MainActivity extends Activity {
+class PistasActivity extends Activity {
 	
-	override void onCreate(Bundle savedInstanceState) {
+    override void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_pistas);
         
         
-        val servicio = crearServicioPrincipal()
+        val servicio = crearServicioDePaisActual()
         servicio.getPaisActual(new Callback<Pais>() {
-        	
         		override failure(RetrofitError e) {
         			e.printStackTrace
         		}
-        		
         		override success(Pais pais, Response response) {
-        			ponerNombreDelPaisActual(pais)
+        			ponerNombreDelPais(pais)
         		}
         	}
         )
         
     }
 	
-	def void ponerNombreDelPaisActual(Pais pais) {
-		findViewById(R.id.pais_actual) as TextView => [
+	def void ponerNombreDelPais(Pais pais) {
+		findViewById(R.id.textView1) as TextView => [
 			text = pais.nombre
 		]
 	}
 	
-	
-	
-	protected def crearServicioPrincipal() {
+	protected def crearServicioDePaisActual() {
 		val SERVER_IP = "192.168.1.34"
-		val API_URL = '''http://192.168.1.34:9000/caso'''
+		val API_URL = '''http://192.168.1.34:9000'''
 		val restAdapter = new RestAdapter.Builder().setEndpoint(API_URL).build
 		val PaisActualService paisActualService = restAdapter.create(PaisActualService)
 		paisActualService

@@ -7,5 +7,8 @@
     <string name="emitirOrdenArresto">Emitir Orden de Arresto</string>
     <string name="viajarBoton">Viajar a otro Pais</string>
     <string name="visitarLugarBoton">Visitar un Lugar</string>
+    <string name="pistas_titulo">Aca va la pista</string>
+    <string name="se_encuentra_en">Se encuentra en:</string>
+    <string name="pais_actual">unPais</string>
 
 </resources>
