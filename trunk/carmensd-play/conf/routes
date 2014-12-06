@@ -10,6 +10,8 @@ GET			/emitirOrdenPara/:villano	controllers.Application.verificarCulpable(villan
 GET        /                                  controllers.Application.index()
 GET        /caso                              controllers.Application.caso()
 
+GET        /caso/paisActual                   controllers.Application.paisActual()
+
 GET        /caso/lugares                      controllers.Application.lugaresDisponibles()
 
 //retorna un lugar!
