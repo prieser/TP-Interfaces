@@ -10,7 +10,7 @@ import exceptions.SeniaRepetidaException
  * Clase que denota al villano que extiende de Ocupante. Tiene una lista de senias y hobbies (strings).
  */
 @Observable
-class Villano extends Ocupante {
+class Villano {
 
 	@Property String nombre
 	@Property Sexo sexo
@@ -58,10 +58,6 @@ class Villano extends Ocupante {
 		hobbies.remove(hobbieARemover)
 		ObservableUtils.firePropertyChanged(this, "hobbies", this.hobbies);
 
-	}
-
-	override ejecutarAccion() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 
 	new() {

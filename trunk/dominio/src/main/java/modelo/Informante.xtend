@@ -1,20 +1,15 @@
 package modelo
 
-class Informante extends Ocupante{
-	
-	@Property String miPista;
-	
-	new(String nuevaPista){
-		miPista = nuevaPista;
+class Informante extends Ocupante {
+
+	@Property String pista
+
+	new(String pista) {
+		this.pista = pista
 	}
-	
-	new() {
-		super()
-	}
-	
+
 	override ejecutarAccion() {
-		//si el villano está en el país, nos da la información según la política del lugar
-		miPista
+		return pista
 	}
-	
+
 }
