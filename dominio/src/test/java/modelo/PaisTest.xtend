@@ -7,7 +7,7 @@ import org.junit.Before
 class PaisTest {
 
 	Pais pais
-	Ocupante ocupante = new Informante
+	Ocupante ocupante = new Informante("pista del informante")
 	Pais paisLimitrofe = new Pais("Israel")
 	
 	@Before def void setup() {
