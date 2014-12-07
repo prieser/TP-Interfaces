@@ -2,9 +2,6 @@ package modelo
 
 abstract class Ocupante {
 
-	@Property String pista;
-	
-	def abstract String ejecutarAccion();
-	
-	
+	def abstract String ejecutarAccion()
+
 }
