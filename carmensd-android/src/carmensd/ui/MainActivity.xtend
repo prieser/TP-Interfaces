@@ -9,6 +9,8 @@ import retrofit.Callback
 import retrofit.RestAdapter
 import retrofit.RetrofitError
 import retrofit.client.Response
+import android.content.Intent
+import android.view.View
 
 class MainActivity extends Activity {
 	
@@ -38,11 +40,24 @@ class MainActivity extends Activity {
 		]
 	}
 	
+	def void viajar(View v) {
+		//val Intent i=new Intent(this,PistasActivity.class);
+		val Intent viajar=new Intent(this,ViajarActivity);
+		startActivity(viajar);
+		
+	}
 	
+	def void pistas(View v) {
+		//val Intent i=new Intent(this,PistasActivity.class);
+		val Intent pistas=new Intent(this,LugaresActivity);
+		startActivity(pistas);
+		
+	}
 	
 	protected def crearServicioPrincipal() {
-		val SERVER_IP = "192.168.1.34"
+		//val SERVER_IP = "192.168.1.34"
 		val API_URL = '''http://192.168.1.34:9000/caso'''
+		//val API_URL = '''http://192.168.1.14:9000/caso'''
 		val restAdapter = new RestAdapter.Builder().setEndpoint(API_URL).build
 		val PaisActualService paisActualService = restAdapter.create(PaisActualService)
 		paisActualService
