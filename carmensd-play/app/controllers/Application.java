@@ -30,7 +30,12 @@ public class Application extends Controller {
     }
     
     public static Result paisActual() {
-    	return ok(Json.toJson(CasoE.getInstance().getEstoyPais()));
+    	// 
+    	JuegoA juego = JuegoA.getInstance();
+        CasoE caso = juego.getCasoActual();
+        //
+    	return ok(Json.toJson(caso.getInstance().getEstoyPais()));
+    	//return ok(Json.toJson(casoE.getInstance().getEstoyPais()));
     }
 
     //pistaDelLugar que espera un lugar y un caso y devuelve la pista
