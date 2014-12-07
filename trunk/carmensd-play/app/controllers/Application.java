@@ -23,17 +23,13 @@ public class Application extends Controller {
     public static Result caso() {
         response().setContentType("application/json");
         //JuegoA juego = new JuegoA();
-        JuegoA juego = JuegoA.getInstance();
-        CasoE caso = juego.getCasoActual();
+        CasoE caso=fix();
         JsonNode json1 = Json.toJson(caso);
         return ok(json1);
     }
     
     public static Result paisActual() {
-    	// 
-    	JuegoA juego = JuegoA.getInstance();
-        CasoE caso = juego.getCasoActual();
-        //
+    	CasoE caso=fix();
     	return ok(Json.toJson(caso.getInstance().getEstoyPais()));
     	//return ok(Json.toJson(casoE.getInstance().getEstoyPais()));
     }
@@ -86,11 +82,13 @@ public class Application extends Controller {
 	
     
     public static Result lugaresDisponibles() {
-        return ok(Json.toJson(CasoE.getInstance().getEstoyPais().getLugaresDeInteres()));
+    	CasoE caso=fix();
+    	return ok(Json.toJson(caso.getInstance().getEstoyPais().getLugaresDeInteres()));
     }
 
     public static Result destinosDisponibles() {
-        return ok(Json.toJson(CasoE.getInstance().getEstoyPais().getPaisesConConexionAereaString()));
+    	CasoE caso=fix();
+        return ok(Json.toJson(caso.getInstance().getEstoyPais().getPaisesConConexionAereaString()));
     }
 
     protected static ObjectNode crearJsonError(String message) {
@@ -103,6 +101,12 @@ public class Application extends Controller {
         ObjectNode result = Json.newObject();
         result.put("status", "OK");
         return result;
+    }
+    
+    public static CasoE fix(){
+    	JuegoA juego = JuegoA.getInstance();
+        CasoE caso = juego.getCasoActual();
+        return caso;
     }
 
 
