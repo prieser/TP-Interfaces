@@ -42,12 +42,12 @@ class MainActivity extends Activity {
 	
 	def void viajar(View v) {
 		//val Intent i=new Intent(this,PistasActivity.class);
-		val Intent viajar=new Intent(this,ViajarActivity);
+		val Intent viajar = new Intent(this,ViajarActivity);
 		startActivity(viajar);
 		
 	}
 	
-	def void pistas(View v) {
+	def void visitar(View v) {
 		//val Intent i=new Intent(this,PistasActivity.class);
 		val Intent pistas=new Intent(this,LugaresActivity);
 		startActivity(pistas);

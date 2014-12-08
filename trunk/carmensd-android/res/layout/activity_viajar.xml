@@ -23,7 +23,7 @@
             android:id="@+id/se_encuentra_en"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/se_encuentra_en" />
+            android:text="Se encuentra en:" />
 
         <TextView
             android:id="@+id/pais_actual"
@@ -32,7 +32,8 @@
             android:text="@string/pais_actual" />
     </LinearLayout>
 
-    <ListView android:id="@+id/LstOpciones"
+    <ListView
+        android:id="@+id/LstOpciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

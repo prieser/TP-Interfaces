@@ -12,7 +12,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pistas_titulo" />
+        android:text="Estos son los lugares que puede visitar:" />
     
 
     <LinearLayout
@@ -29,21 +29,21 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Biblioteca" />
+            android:text="@string/lugar1" />
 
         <Button
             android:id="@+id/boton_lugar2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Club" />
+            android:text="@string/lugar2" />
 
         <Button
             android:id="@+id/boton_lugar3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Embajada" />
+            android:text="@string/lugar3" />
     </LinearLayout>
 
 
