@@ -29,9 +29,9 @@ class LugaresActivity extends Activity {
 					val nombreDelLugar2 = findViewById(R.id.boton_lugar2) as Button
 					val nombreDelLugar3 = findViewById(R.id.boton_lugar3) as Button
 					
-					nombreDelLugar1.text = listaDeLugares.get(0).nombreLugar
-					nombreDelLugar2.text = listaDeLugares.get(1).nombreLugar
-					nombreDelLugar3.text = listaDeLugares.get(2).nombreLugar
+					nombreDelLugar1.setText(listaDeLugares.get(0).nombreLugar)
+					nombreDelLugar2.setText(listaDeLugares.get(1).nombreLugar)
+					nombreDelLugar3.setText(listaDeLugares.get(2).nombreLugar)
 					
 				}
 	

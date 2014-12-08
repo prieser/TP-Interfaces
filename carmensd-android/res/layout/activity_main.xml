@@ -23,13 +23,15 @@
             android:id="@+id/se_encuentra_en"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/se_encuentra_en" />
+            android:text="Se encuentra en:" />
 
         <TextView
             android:id="@+id/pais_actual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pais_actual" />
+            android:paddingLeft="5dip"
+            android:text="@string/pais_actual"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <Button
@@ -43,13 +45,14 @@
         android:id="@+id/visitarLugarBoton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="pistas"
+        android:onClick="visitar"
         android:text="@string/visitarLugarBoton" />
 
     <Button
         android:id="@+id/emitirOrdenArrestoBoton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="emitirOrdenDeArresto"
         android:text="@string/emitirOrdenArresto" />
 
 </LinearLayout>
