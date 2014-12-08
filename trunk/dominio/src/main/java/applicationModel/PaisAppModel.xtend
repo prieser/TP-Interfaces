@@ -16,15 +16,15 @@ class PaisAppModel {
 	@Property List<? extends Lugar> lugaresDeInteres
 	
 	new(String string, MapaMundi mapamundi) {
-		this._mapamundi = mapamundi	
-		this._pais = new Pais()
-		this._flag = string
+		this.mapamundi = mapamundi	
+		this.pais = new Pais()
+		this.flag = string
 	}
 	
 	new(String string, Pais elPais, MapaMundi mapamundi) {
 		this.flag = string
-		this._pais = elPais
-		this._mapamundi = mapamundi
+		this.pais = elPais
+		this.mapamundi = mapamundi
 	}
 	
 	def agregarPais() {
