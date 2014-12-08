@@ -32,24 +32,8 @@
             android:text="@string/pais_actual" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/viajarBoton"
+    <ListView android:id="@+id/LstOpciones"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="viajar"
-        android:text="@string/viajarBoton" />
-
-    <Button
-        android:id="@+id/visitarLugarBoton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="pistas"
-        android:text="@string/visitarLugarBoton" />
-
-    <Button
-        android:id="@+id/emitirOrdenArrestoBoton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/emitirOrdenArresto" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
