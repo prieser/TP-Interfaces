@@ -7,13 +7,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="tpi.gui.carmensd.ui.PistasActivity" >
-    
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Estos son los lugares que puede visitar:" />
-    
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -26,25 +25,32 @@
 
         <Button
             android:id="@+id/boton_lugar1"
+            android:onClick="visitarLugar"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="@string/lugar1" />
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/boton_lugar2"
+            android:onClick="visitarLugar"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="@string/lugar2" />
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/boton_lugar3"
+            android:onClick="visitarLugar"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="@string/lugar3" />
+            android:layout_weight="1" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textoPista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
