@@ -48,11 +48,14 @@ public class Application extends Controller {
     public static Result viajar(String destino) {
         response().setContentType("application/json");
         
-        Pais paisDestino = MapaMundi.getInstance().getPais(destino);
-        CasoE.getInstance().viajar(paisDestino);
+        CasoE caso=fix();
         
-        JsonNode json1 = Json.toJson(CasoE.getInstance());
-        return ok(json1);
+        Pais paisDestino = MapaMundi.getInstance().getPais(destino);
+        caso.viajar(paisDestino);
+        
+        //JsonNode json1 = Json.toJson(CasoE.getInstance());
+        //return ok(json1);
+        return ok(Json.toJson(caso.getInstance().getEstoyPais().getPaisesConConexionAereaString()));
     }
     
     // guidosWork :P
