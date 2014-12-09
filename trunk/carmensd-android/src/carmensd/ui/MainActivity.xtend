@@ -17,9 +17,13 @@ class MainActivity extends Activity {
 	override void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        
-        val servicio = crearServicioPrincipal()
+
+		servicioPrincipal()
+
+    }
+    
+    def void servicioPrincipal(){
+    	 val servicio = crearServicioPrincipal()
         servicio.getPaisActual(new Callback<Pais>() {
         	
         		override failure(RetrofitError e) {
@@ -31,8 +35,8 @@ class MainActivity extends Activity {
         		}
         	}
         )
-        
     }
+    
 	
 	def void ponerNombreDelPaisActual(Pais pais) {
 		findViewById(R.id.pais_actual) as TextView => [
@@ -44,7 +48,7 @@ class MainActivity extends Activity {
 		//val Intent i=new Intent(this,PistasActivity.class);
 		val Intent viajar=new Intent(this,ViajarActivity);
 		startActivity(viajar);
-		
+		servicioPrincipal();
 	}
 	
 	def void visitar(View v) {
@@ -55,8 +59,8 @@ class MainActivity extends Activity {
 	}
 	
 	protected def crearServicioPrincipal() {
-		//val SERVER_IP = "192.168.137.1"
-		val SERVER_IP = "192.168.1.34" //rieserIP
+		val SERVER_IP = "192.168.56.1"
+		//val SERVER_IP = "192.168.1.34" //rieserIP
 		val API_URL = '''http://«SERVER_IP»:9000/caso'''
 		val restAdapter = new RestAdapter.Builder().setEndpoint(API_URL).build
 		val PaisActualService paisActualService = restAdapter.create(PaisActualService)
