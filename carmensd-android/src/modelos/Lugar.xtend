@@ -6,6 +6,4 @@ import org.eclipse.xtend.lib.annotations.Accessors
 class Lugar {
 	
 	String nombreLugar
-	Ocupante ocupante
-	
 }
