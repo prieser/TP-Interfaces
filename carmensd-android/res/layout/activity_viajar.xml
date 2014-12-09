@@ -1,25 +1,28 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
-
+    tools:context="tpi.gui.carmensd.ui.ViajarActivity" >
+    
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title" />
+    
+       <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
+    <TextView
             android:id="@+id/se_encuentra_en"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,11 +33,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pais_actual" />
-    </LinearLayout>
-
+        
     <ListView
-        android:id="@+id/LstOpciones"
+        android:id="@+id/listaDePaises"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+        
+            
 
 </LinearLayout>
+
+</RelativeLayout>
