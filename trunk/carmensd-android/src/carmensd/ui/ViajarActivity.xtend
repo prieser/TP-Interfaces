@@ -2,23 +2,14 @@ package carmensd.ui
 
 import android.app.Activity
 import android.os.Bundle
-import android.widget.TextView
-import carmensd.servicios.PaisActualService
-import modelos.Pais
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import carmensd.servicios.ViajarService
+import java.util.List
 import retrofit.Callback
 import retrofit.RestAdapter
 import retrofit.RetrofitError
 import retrofit.client.Response
-import java.util.List
-import java.util.ArrayList
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import android.view.View
-import android.content.Intent
-import android.widget.Button
-import carmensd.servicios.ViajarService
-import android.content.Context
-import android.widget.AdapterView
 
 class ViajarActivity extends Activity {
 	
