@@ -23,34 +23,22 @@
         android:layout_marginTop="22dp"
         android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/boton_lugar1"
+        <ListView
+            android:id="@+id/listaDeLugares"
+            android:layout_width="wrap_content"
             android:onClick="visitarLugar"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/boton_lugar2"
-            android:onClick="visitarLugar"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/boton_lugar3"
-            android:onClick="visitarLugar"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="188dp" />
+        
+        
     </LinearLayout>
 
     <TextView
         android:id="@+id/textoPista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="63dp"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
