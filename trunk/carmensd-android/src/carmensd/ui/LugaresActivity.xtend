@@ -3,7 +3,6 @@ package carmensd.ui
 import android.app.Activity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.TextView
 import carmensd.servicios.LugaresService
 import java.util.List
@@ -12,6 +11,9 @@ import retrofit.Callback
 import retrofit.RestAdapter
 import retrofit.RetrofitError
 import retrofit.client.Response
+import android.widget.ListView
+import android.widget.ArrayAdapter
+import java.util.ArrayList
 
 class LugaresActivity extends Activity {
 
@@ -27,15 +29,7 @@ class LugaresActivity extends Activity {
 				}
 
 				override success(List<Lugar> listaDeLugares, Response responce) {
-
-					val nombreDelLugar1 = findViewById(R.id.boton_lugar1) as Button
-					val nombreDelLugar2 = findViewById(R.id.boton_lugar2) as Button
-					val nombreDelLugar3 = findViewById(R.id.boton_lugar3) as Button
-
-					nombreDelLugar1.setText(listaDeLugares.get(0).nombreLugar)
-					nombreDelLugar2.setText(listaDeLugares.get(1).nombreLugar)
-					nombreDelLugar3.setText(listaDeLugares.get(2).nombreLugar)
-
+					ponerListaDeLugares(listaDeLugares)
 				}
 
 			}
@@ -43,9 +37,20 @@ class LugaresActivity extends Activity {
 
 	}
 
+	def void ponerListaDeLugares(List<Lugar> lugares) {
+		var ArrayList<String> listaDeStrings = newArrayList()
+		for(Lugar unLugar : lugares){
+			listaDeStrings.add(unLugar.nombreLugar)
+		}
+		
+		var ListView listaAMostrar = findViewById(R.id.listaDeLugares) as ListView
+		var ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaDeStrings)
+		listaAMostrar.setAdapter(adapter);
+	}
+
 	protected def crearServicioDeLugares() {
-		val SERVER_IP = "192.168.1.34"
-		val API_URL = '''http://192.168.1.34:9000/caso'''
+		val SERVER_IP = "192.168.1.35"
+		val API_URL = '''http://192.168.1.35:9000/caso'''
 		val restAdapter = new RestAdapter.Builder().setEndpoint(API_URL).build
 		val LugaresService lugaresService = restAdapter.create(LugaresService)
 		lugaresService
