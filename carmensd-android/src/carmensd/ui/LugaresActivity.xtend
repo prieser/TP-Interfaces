@@ -1,19 +1,21 @@
 package carmensd.ui
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import carmensd.servicios.LugaresService
+import java.util.ArrayList
 import java.util.List
 import modelos.Lugar
 import retrofit.Callback
 import retrofit.RestAdapter
 import retrofit.RetrofitError
 import retrofit.client.Response
-import android.widget.ListView
-import android.widget.ArrayAdapter
-import java.util.ArrayList
+import android.widget.AdapterView.OnItemClickListener;
 
 class LugaresActivity extends Activity {
 
@@ -22,8 +24,7 @@ class LugaresActivity extends Activity {
 		setContentView(R.layout.activity_lugares);
 
 		val servicio = crearServicioDeLugares()
-		servicio.getLugaresParaVisitar(
-			new Callback<List<Lugar>>() {
+		servicio.getLugaresParaVisitar(new Callback<List<Lugar>>() {
 				override failure(RetrofitError e) {
 					e.printStackTrace
 				}
@@ -43,9 +44,15 @@ class LugaresActivity extends Activity {
 			listaDeStrings.add(unLugar.nombreLugar)
 		}
 		
-		var ListView listaAMostrar = findViewById(R.id.listaDeLugares) as ListView
+		var ListView listView = findViewById(R.id.listaDeLugares) as ListView
 		var ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaDeStrings)
-		listaAMostrar.setAdapter(adapter);
+		listView.setAdapter(adapter);
+		
+		listView.setOnItemClickListener(new OnItemClickListener() {
+			override void onItemClick(AdapterView<?> arg0, View view, int pos, long arg3) {
+				
+			}
+		})
 	}
 
 	protected def crearServicioDeLugares() {
@@ -56,22 +63,22 @@ class LugaresActivity extends Activity {
 		lugaresService
 	}
 
-	def void visitarLugar(View v) {
-		val servicio = crearServicioDeLugares()
-		servicio.getPistaDelLugar(
-			1, // Este ID tiene que variar de acuerdo al lugar que este visitando
-			new Callback<String>() {
-				override failure(RetrofitError e) {
-					e.printStackTrace
-				}
-
-				override success(String pista, Response arg1) {
-					val pistaText = findViewById(R.id.textoPista) as TextView
-					pistaText.setText(pista)
-				}
-
-			}
-		)
-	}
+//	def void visitarLugar(View v) {
+//		val servicio = crearServicioDeLugares()
+//		servicio.getPistaDelLugar(
+//			1, // Este ID tiene que variar de acuerdo al lugar que este visitando
+//			new Callback<String>() {
+//				override failure(RetrofitError e) {
+//					e.printStackTrace
+//				}
+//
+//				override success(String pista, Response arg1) {
+//					val pistaText = findViewById(R.id.textoPista) as TextView
+//					pistaText.setText(pista)
+//				}
+//
+//			}
+//		)
+//	}
 
 }
